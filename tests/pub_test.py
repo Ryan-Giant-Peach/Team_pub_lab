@@ -6,11 +6,12 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
 
     def setUp(self):
-        self.pub = Pub("The Prancing Pony", 100, "Captain Morgans")
+        self.drink = Drink("Captain Morgans", 5)
+        self.pub = Pub("The Prancing Pony", 100, [self.drink])
 
-    def test_can_increase_till(self, amount):
-        self.pub.increase_till(25)
-        self.assertEqual(125, self.pub.till)
+    def test_can_increase_till(self):
+        self.pub.increase_till(self.drink)
+        self.assertEqual(105, self.pub.till)
 
     # def test_can_sell_drink_to_customer(self, drink):
     #     customer = Customer("Jack Sparrow", 1000)
