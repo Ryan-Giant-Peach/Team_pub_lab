@@ -15,5 +15,15 @@ class Pub:
     def check_legal_age(self, customer):
         return customer.age >= 18
 
+    def increase_drunkenness(self, drink):
+        self.drunkenness += drink.alcohol_level
+    
+    def check_too_drunk(self, drink):
+        if customer.alcohol_level >= 3:
+            return "No service pal!"
+        else:
+            self.can_sell_to_customer
+    
+
         
     

@@ -6,8 +6,8 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
 
     def setUp(self):
-        self.customer = Customer("Jack Sparrow", 50, 18)
-        self.drink = Drink("Captain Morgans", 5)
+        self.customer = Customer("Jack Sparrow", 50, 18, 5)
+        self.drink = Drink("Captain Morgans", 5, 3)
         self.pub = Pub("The Prancing Pony", 100, [self.drink])
 
     def test_can_increase_till(self):
@@ -22,9 +22,18 @@ class TestPub(unittest.TestCase):
     def test_can_check_legal_age(self):
         is_legal = self.pub.check_legal_age(self.customer)
         self.assertTrue(is_legal)
-        young_customer = Customer("Jackie Potato", 50, 16)
+        young_customer = Customer("Jackie Potato", 50, 16, 10)
         is_legal = self.pub.check_legal_age(young_customer)
         self.assertFalse(is_legal)
 
-    
+    def test_can_check_too_drunk(self):
+        is_too_drunk = self.pub.check_too_drunk(self.customer)
+        self.assertTrue(is_too_drunk)
+        # custoomeer = Customer("Lord of Rings", 50, 18, 5)
+        # self.pub.check_too_drunk(custoomeer)
+        # self.assertTrue(custoomeer)
+
+
+
+
 
