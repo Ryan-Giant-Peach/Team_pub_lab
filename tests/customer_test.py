@@ -1,4 +1,7 @@
 import unittest
 
-from classes.customer import Customer
-from classes.drink import Drink
+from src.customer import Customer
+from src.drink import Drink
+
+class TestCustomer(unittest.TestCase):
+    pass

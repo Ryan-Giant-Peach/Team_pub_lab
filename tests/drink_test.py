@@ -1,3 +1,6 @@
 import unittest
 
-from classes.drink import Drink
+from src.drink import Drink
+
+class TestDrink(unittest.TestCase):
+    pass

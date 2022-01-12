@@ -5,5 +5,5 @@ from src.customer import Customer
 
 class TestPub(unittest.TestCase):
 
-    def test_pub_has_name(self):
-        self.assertEqual("The Prancing Pony", self.pub.name)
+    def setUp(self):
+        self.pub = Pub("The Prancing Pony", 100.00)
