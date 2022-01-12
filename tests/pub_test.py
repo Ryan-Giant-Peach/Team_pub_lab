@@ -6,7 +6,7 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
 
     def setUp(self):
-        self.customer = Customer("Jack Sparrow", 50)
+        self.customer = Customer("Jack Sparrow", 50, 18)
         self.drink = Drink("Captain Morgans", 5)
         self.pub = Pub("The Prancing Pony", 100, [self.drink])
 
@@ -19,5 +19,12 @@ class TestPub(unittest.TestCase):
         self.assertEqual(105, self.pub.till)
         self.assertEqual(45, self.customer.wallet)
 
+    def test_can_check_legal_age(self):
+        is_legal = self.pub.check_legal_age(self.customer)
+        self.assertTrue(is_legal)
+        young_customer = Customer("Jackie Potato", 50, 16)
+        is_legal = self.pub.check_legal_age(young_customer)
+        self.assertFalse(is_legal)
 
+    
 

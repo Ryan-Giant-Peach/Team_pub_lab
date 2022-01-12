@@ -11,3 +11,9 @@ class Pub:
     def can_sell_to_customer(self, customer, drink):
         customer.reduce_wallet(drink)
         self.increase_till(drink)
+
+    def check_legal_age(self, customer):
+        return customer.age >= 18
+
+        
+    
