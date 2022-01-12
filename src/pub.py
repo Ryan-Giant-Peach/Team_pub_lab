@@ -7,3 +7,7 @@ class Pub:
     def increase_till(self, drink):
         self.till += drink.price
         return
+    
+    def can_sell_to_customer(self, customer):
+        customer.reduce_wallet(drink.price)
+        self.increase_till(drink.price)
