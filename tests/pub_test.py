@@ -27,11 +27,9 @@ class TestPub(unittest.TestCase):
         self.assertFalse(is_legal)
 
     def test_can_check_too_drunk(self):
-        is_too_drunk = self.pub.check_too_drunk(self.customer)
-        self.assertTrue(is_too_drunk)
-        # custoomeer = Customer("Lord of Rings", 50, 18, 5)
-        # self.pub.check_too_drunk(custoomeer)
-        # self.assertTrue(custoomeer)
+        custoomeer = Customer("Lord of Rings", 50, 18, 5)
+        self.pub.check_too_drunk(custoomeer)
+        self.assertTrue(custoomeer)
 
 
 

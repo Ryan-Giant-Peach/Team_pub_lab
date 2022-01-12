@@ -18,8 +18,8 @@ class Pub:
     def increase_drunkenness(self, drink):
         self.drunkenness += drink.alcohol_level
     
-    def check_too_drunk(self, drink):
-        if customer.alcohol_level >= 3:
+    def check_too_drunk(self, customer):
+        if customer.drunkenness >= 3:
             return "No service pal!"
         else:
             self.can_sell_to_customer
